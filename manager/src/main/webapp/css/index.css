@@ -1,0 +1,138 @@
+#chatWindow{
+	display:none;
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    width: 600px;
+    height: 479px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 24px;
+    font-family: '微软雅黑';
+}
+#title{
+    line-height: 34px;
+    padding-left: 21px;
+    background-color: #c2c2c2;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #8b9485;
+    background: -webkit-linear-gradient(#dbebeb, #bababa); /* Safari 5.1 - 6.0 */
+  	background: -o-linear-gradient(#dbebeb, #bababa); /* Opera 11.1 - 12.0 */
+ 	background: -moz-linear-gradient(#dbebeb, #bababa); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#dbebeb, #bababa); /* 标准的语法 */
+}
+
+#content{
+    border-bottom: 1px solid #b9bdbd;
+    height: 379px;
+    scrollbar-base-color:#ff6600; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#message{
+	width: 503px;
+    height: 60px;
+    border: none;
+    border-radius: 0px 0px 0px 5px;
+}
+#sendBtn{
+    width: 100px;
+    margin-left: -8px;
+    height: 64px;
+    border: none;
+    color: #fff;
+    background-color: #62a537;
+    border-radius: 0px 0px 5px 0px;
+    background: linear-gradient(#dbebeb, #bababa);
+    background: -webkit-radial-gradient(#dbebeb, #bababa);  /* Safari 5.1 - 6.0 */
+  	background: -o-radial-gradient(#dbebeb, #bababa);  /* Opera 11.6 - 12.0 */
+  	background: -moz-radial-gradient(#dbebeb, #bababa); /* Firefox 3.6 - 15 */
+  	background: radial-gradient(#dbebeb, #bababa);  /* 标准的语法 */
+}
+
+.arrow {
+	position: relative;
+   
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: solid 8px;
+    
+}
+.message-piece{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.message-text{
+    display: inline-block;
+    width: auto;
+    max-width: 400px;
+    min-height:20px;
+	padding: 9px;
+	height: auto;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #ceeefb;
+	margin-top: -10px;
+}
+.left{
+	text-align:left;
+	margin-left: 20px;
+}
+.right{
+	text-align:right;
+	margin-right: 20px;
+}
+.left-arr{
+ 	top: 15px;
+    left: -16px;
+    border-color: rgba(0,0,0,0) rgba(206,238,251,1) rgba(0,0,0,0) rgba(0,0,0,0);
+}
+.right-arr{
+	top: 15px;
+    left: 570px;
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) rgba(206,238,251,1);
+}
+.close-btn{
+	margin-left: 482px;
+    background-color: #807070;
+    padding: 0px 4px;
+    font-size: 16px;
+    color: #fff;
+    width: 439px;
+    border-radius: 28px;
+    cursor:pointer;
+}
+.start-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 70px;
+    font-size: 30px;
+}
+
+/* 滚动条开始  */
+#content::-webkit-scrollbar {
+    width:10px;
+    height:1px;
+}
+#content::-webkit-scrollbar-button{
+    background-color:#d2bfc0;
+}
+#content::-webkit-scrollbar-track{
+    /* background:#FF66D5; */
+}
+#content::-webkit-scrollbar-track-piece{
+    /* background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png); */
+}
+#content::-webkit-scrollbar-thumb{
+    background:#a5a29e;
+    border-radius:4px;
+}
+#content::-webkit-scrollbar-corner{
+    background:#82AFFF;
+}
+#content::-webkit-scrollbar-resizer{
+    background:#FF0BEE;
+}
+/* 滚动条结束  */

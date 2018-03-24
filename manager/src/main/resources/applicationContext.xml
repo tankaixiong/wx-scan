@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!-- 添加注解支持 -->
+    <context:annotation-config/>
+
+    <!-- 扫描包 -->
+    <context:component-scan base-package="tk">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+
+    <!--任务线程-->
+    <task:annotation-driven scheduler="taskScheduler"/>
+
+    <!--Task Scheduler -->
+    <bean id="taskScheduler" class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+        <property name="waitForTasksToCompleteOnShutdown" value="true"/>
+        <property name="awaitTerminationSeconds" value="0"/>
+        <property name="poolSize" value="5"/>
+    </bean>
+
+    <!-- 定时任务配置 -->
+    <!--<task:scheduled-tasks scheduler="taskScheduler">-->
+        <!--定时执行每日数据  -->
+        <!--<task:scheduled ref="scheduleService" method="scheduleNewDay" cron="0 0 #{scheduleService.acrossDay} * * ?"/>-->
+        <!--间隔5分钟推送一次体力-->
+        <!--<task:scheduled ref="scheduleService" method="tokenRefresh" fixed-delay="60000"/>-->
+
+
+    <!--</task:scheduled-tasks>-->
+</beans>  
